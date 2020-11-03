@@ -1,8 +1,41 @@
-<h1>{{title}}</h1>
-<p>Hello {{title}}</p>
+<h1>Bé tập tính</h1>
+<form class="container-fluid" method="POST" onsubmit="return onSubmit()">
+  <div class=" row">
+    <label for="firstNum" class="col-md-2"> Số thứ nhất </label>
+    <input type="text" name="firstNum" class="col-md-2" value={{number1}}>
+    <div class="col-md-1">
+      <input type="radio" name="cal" value="Add" {{checked cal "Add"}}>
+      <label>Cộng</label>
+    </div>
+    <div class="col-md-1">
+      <input type="radio" name="cal" value="Subtract" {{checked cal "Subtract"}}>
+      <label>Trừ</label>
+    </div>
+  </div>
+  <div class="row">
+    <label for="secondNum" class="col-md-2"> Số thứ hai </label>
 
-<form method="post">
-  <input name="number" value="{{number}}">
-  <input type="submit" value="Square">
-  <input value="{{result}}">
+    <input type="text" name="secondNum" class="col-md-2" value={{number2}}>
+
+    <div class="col-md-1">
+      <input type="radio" name="cal" value="Multi" {{checked cal 'Multi'}}>
+      <label>Nhân</label>
+    </div>
+
+    <div class="col-md-1">
+      <input type="radio" name="cal" value="Divide" {{checked cal 'Divide'}}>
+      <label>Chia</label>
+    </div>
+  </div>
+  <div class="row">
+    <label for="result" class="col-md-2"> Kết quả </label>
+    <input readonly id="result" class="col-md-2" value={{result}}>
+    <button id="submit" class="col-md-1">Tính</button>
+  </div>
+  <div class="row">
+    <label for="noti" class="col-md-2"> Thông báo </label>
+    <div class="col-md-2">
+      <p id="noti" style="color: red"></p>
+    </div>
+  </div>
 </form>
